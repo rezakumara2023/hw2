@@ -84,6 +84,36 @@ studio["name"] = "Warner Bros."
 studio.save
 puts "Studio: #{Studio.all.count}"
 
+# Movie Model
+
+Movie.destroy_all
+batmanbegins = Movie.new
+batmanbegins ["title"] = "Batman Begins"
+batmanbegins ["year_released"] = 2005
+batmanbegins ["rated"] = "PG-13"
+batmanbegins ["studio_id"] = 1
+batmanbegins.save
+
+darkknight = Movie.new
+darkknight ["title"] = "The Dark Knight"
+darkknight ["year_released"] = 2008
+darkknight ["rated"] = "PG-13"
+darkknight ["studio_id"] = 1
+darkknight.save
+
+darkknightrises = Movie.new
+darkknightrises ["title"] = "The Dark Knight Rises"
+darkknightrises ["year_released"] = 2012
+darkknightrises ["rated"] = "PG-13"
+darkknightrises ["studio_id"] = 1
+darkknightrises.save
+
+
+# Sanity Check
+all_movies = Movie.all
+puts all_movies.inspect
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
