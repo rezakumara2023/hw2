@@ -164,28 +164,102 @@ actor.save
 all_actors = Actor.all
 puts all_actors.inspect
 
--- Batman Begins
+# Movie Model
 
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 2, "Alfred");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 3, "Ra's Al Ghul");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 4, "Rachel Dawes");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 5, "Commissioner Gordon");
+Role.destroy_all
+role = Role.new
+role ["movie_id"] = 1
+role ["actor_id"] = 1
+role ["character_name"] = "Bruce Wayne"
+role.save
 
+role = Role.new
+role ["movie_id"] = 1
+role ["actor_id"] = 2
+role ["character_name"] = "Alfred"
+role.save
 
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 6, "Joker");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 7, "Harvey Dent");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 2, "Alfred");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 8, "Rachel Dawes");
+role = Role.new
+role ["movie_id"] = 1
+role ["actor_id"] = 3
+role ["character_name"] = "Ra's Al Ghul"
+role.save
 
+role = Role.new
+role ["movie_id"] = 1
+role ["actor_id"] = 4
+role ["character_name"] = "Rachel Dawes"
+role.save
 
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 1, "Bruce Wayne");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 5, "Commissioner Gordon");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 9, "Bane");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 10, "John Blake");
-INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 11, "Selina Kyle");
+role = Role.new
+role ["movie_id"] = 1
+role ["actor_id"] = 5
+role ["character_name"] = "Commissioner Gordon"
+role.save
 
+role = Role.new
+role ["movie_id"] = 2
+role ["actor_id"] = 1
+role ["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role ["movie_id"] = 2
+role ["actor_id"] = 6
+role ["character_name"] = "Joker"
+role.save
+
+role = Role.new
+role ["movie_id"] = 2
+role ["actor_id"] = 7
+role ["character_name"] = "Harvey Dent"
+role.save
+
+role = Role.new
+role ["movie_id"] = 2
+role ["actor_id"] = 2
+role ["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role ["movie_id"] = 2
+role ["actor_id"] = 8
+role ["character_name"] = "Rachel Dawes"
+role.save
+
+role = Role.new
+role ["movie_id"] = 3
+role ["actor_id"] = 1
+role ["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role ["movie_id"] = 3
+role ["actor_id"] = 5
+role ["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role ["movie_id"] = 3
+role ["actor_id"] = 9
+role ["character_name"] = "Bane"
+role.save
+
+role = Role.new
+role ["movie_id"] = 3
+role ["actor_id"] = 10
+role ["character_name"] = "John Blake"
+role.save
+
+role = Role.new
+role ["movie_id"] = 3
+role ["actor_id"] = 11
+role ["character_name"] = "Selina Kyle"
+role.save
+
+# Role Sanity Check
+all_roles = Role.all
+puts all_roles.inspect
 
 # Prints a header for the movies output
 puts "Movies"
