@@ -77,6 +77,12 @@
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+# Studio Model
+Studio.destroy_all
+studio = Studio.new
+studio["name"] = "Warner Bros."
+studio.save
+puts "Studio: #{Studio.all.count}"
 
 # Prints a header for the movies output
 puts "Movies"
