@@ -87,31 +87,104 @@ puts "Studio: #{Studio.all.count}"
 # Movie Model
 
 Movie.destroy_all
-batmanbegins = Movie.new
-batmanbegins ["title"] = "Batman Begins"
-batmanbegins ["year_released"] = 2005
-batmanbegins ["rated"] = "PG-13"
-batmanbegins ["studio_id"] = 1
-batmanbegins.save
+movie = Movie.new
+movie ["title"] = "Batman Begins"
+movie ["year_released"] = 2005
+movie ["rated"] = "PG-13"
+movie ["studio_id"] = 1
+movie.save
 
-darkknight = Movie.new
-darkknight ["title"] = "The Dark Knight"
-darkknight ["year_released"] = 2008
-darkknight ["rated"] = "PG-13"
-darkknight ["studio_id"] = 1
-darkknight.save
+movie = Movie.new
+movie ["title"] = "The Dark Knight"
+movie ["year_released"] = 2008
+movie ["rated"] = "PG-13"
+movie ["studio_id"] = 1
+movie.save
 
-darkknightrises = Movie.new
-darkknightrises ["title"] = "The Dark Knight Rises"
-darkknightrises ["year_released"] = 2012
-darkknightrises ["rated"] = "PG-13"
-darkknightrises ["studio_id"] = 1
-darkknightrises.save
+movie = Movie.new
+movie ["title"] = "The Dark Knight Rises"
+movie ["year_released"] = 2012
+movie ["rated"] = "PG-13"
+movie["studio_id"] = 1
+movie.save
 
 
-# Sanity Check
+# Movie Sanity Check
 all_movies = Movie.all
 puts all_movies.inspect
+
+# Actor Model
+
+Actor.destroy_all
+actor = Actor.new
+actor ["name"] = "Christian Bale"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Michael Caine"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Liam Neeson"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Katie Holmes"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Gary Oldman"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Heath Ledger"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Aaron Eckhart"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Maggie Gyllenhaal"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Tom Hardy"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+actor = Actor.new
+actor ["name"] = "Anne Hathaway"
+actor.save
+
+# Actor Sanity Check
+all_actors = Actor.all
+puts all_actors.inspect
+
+-- Batman Begins
+
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 1, "Bruce Wayne");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 2, "Alfred");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 3, "Ra's Al Ghul");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 4, "Rachel Dawes");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (1, 5, "Commissioner Gordon");
+
+
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 1, "Bruce Wayne");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 6, "Joker");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 7, "Harvey Dent");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 2, "Alfred");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (2, 8, "Rachel Dawes");
+
+
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 1, "Bruce Wayne");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 5, "Commissioner Gordon");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 9, "Bane");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 10, "John Blake");
+INSERT INTO roles (movie_id, actor_id, character_name) VALUES (3, 11, "Selina Kyle");
 
 
 # Prints a header for the movies output
