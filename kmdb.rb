@@ -82,7 +82,8 @@ Studio.destroy_all
 studio = Studio.new
 studio["name"] = "Warner Bros."
 studio.save
-puts "Studio: #{Studio.all.count}"
+all_studios = Studio.all
+puts all_studios.inspect
 
 # Movie Model
 
@@ -110,8 +111,8 @@ movie.save
 
 
 # Movie Sanity Check
-all_movies = Movie.all
-puts all_movies.inspect
+# all_movies = Movie.all
+# puts all_movies.inspect
 
 # Actor Model
 
@@ -268,6 +269,35 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+
+# query for all rows in the movies table
+all_movies = Movie.all
+
+# loop through array of all_movies rows
+for movie in all_movies
+  # read the relevant columns from the movie row
+  title = movie ["title"]
+  year_released = movie ["year_released"]
+  rating = movie ["rated"]
+
+  # query to find the studio title
+  studio = Studio.find_by({"id" => movie["studio_id"]})
+  
+  # read the studio title
+  studio_title = studio["name"]
+
+  puts "#{title} #{year_released} #{rating} #{studio_title}"
+end
+
+
+# Sample output:
+
+# Movies
+# ======
+
+# Batman Begins          2005           PG-13  Warner Bros.
+# The Dark Knight        2008           PG-13  Warner Bros.
+# The Dark Knight Rises  2012           PG-13  Warner Bros.
 
 # Prints a header for the cast output
 puts ""
