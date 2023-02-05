@@ -165,7 +165,7 @@ actor.save
 all_actors = Actor.all
 puts all_actors.inspect
 
-# Movie Model
+# Role Model
 
 Role.destroy_all
 role = Role.new
@@ -282,13 +282,14 @@ for movie in all_movies
 
   # query to find the studio title
   studio = Studio.find_by({"id" => movie["studio_id"]})
-  
+
   # read the studio title
-  studio_title = studio["name"]
+  # studio_title = studio["name"]
 
-  puts "#{title} #{year_released} #{rating} #{studio_title}"
+  puts "#{title} #{year_released} #{rating} "
 end
-
+# questions for faculty (1) error in reading studio_title and when I try to run the active record the role id or the primary key keeps increasing
+# is that why?
 
 # Sample output:
 
@@ -305,5 +306,48 @@ puts "Top Cast"
 puts "========"
 puts ""
 
+
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+# query for all casts in the Cast table
+all_casts = Role.all
+
+# loop through array of all_casts rows
+for cast in all_casts
+  # read all the cast
+  char_name = cast ["character_name"]
+
+  # query to find the movie for this cast
+  movie = Movie.find_by({"id" => cast["movie_id"]})
+  
+  # read the movie title from the movie row
+  movie_title = movie ["title"]
+
+  # query to find the actor name for this character
+  actor = Actor.find_by({"id" => cast["actor_id"]})
+
+  # read the actor name from the character row
+  actor_name = actor ["name"]
+ 
+  puts "#{movie_title} #{actor_name} #{char_name} "
+end
+
+# Top Cast
+# ========
+
+# Batman Begins          Christian Bale        Bruce Wayne
+# Batman Begins          Michael Caine         Alfred
+# Batman Begins          Liam Neeson           Ra's Al Ghul
+# Batman Begins          Katie Holmes          Rachel Dawes
+# Batman Begins          Gary Oldman           Commissioner Gordon
+# The Dark Knight        Christian Bale        Bruce Wayne
+# The Dark Knight        Heath Ledger          Joker
+# The Dark Knight        Aaron Eckhart         Harvey Dent
+# The Dark Knight        Michael Caine         Alfred
+# The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
+# The Dark Knight Rises  Christian Bale        Bruce Wayne
+# The Dark Knight Rises  Gary Oldman           Commissioner Gordon
+# The Dark Knight Rises  Tom Hardy             Bane
+# The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
+# The Dark Knight Rises  Anne Hathaway         Selina Kyle
