@@ -168,9 +168,14 @@ actor.save
 # Role Model
 
 Role.destroy_all
+# query to find movie title
 batmanbegins = Movie.find_by({"title" => "Batman Begins"})
 darkknight = Movie.find_by({"title" => "The Dark Knight"})
 darkknightrises = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+# query to find actor title
+christian_bale = Actor.find_by({"name" => "Christian Bale"})
+
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
 role ["actor_id"] = 1
@@ -262,8 +267,8 @@ role ["character_name"] = "Selina Kyle"
 role.save
 
 # Role Sanity Check
-all_roles = Role.all
-puts all_roles.inspect
+#all_roles = Role.all
+# puts all_roles.inspect
 
 # Prints a header for the movies output
 puts "Movies"
