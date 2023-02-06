@@ -88,25 +88,26 @@ puts all_studios.inspect
 # Movie Model
 
 Movie.destroy_all
+studio = Studio.find_by({"name" => "Warner Bros."})
 movie = Movie.new
 movie ["title"] = "Batman Begins"
 movie ["year_released"] = 2005
 movie ["rated"] = "PG-13"
-movie ["studio_id"] = 1
+movie ["studio_id"] = studio["id"]
 movie.save
 
 movie = Movie.new
 movie ["title"] = "The Dark Knight"
 movie ["year_released"] = 2008
 movie ["rated"] = "PG-13"
-movie ["studio_id"] = 1
+movie ["studio_id"] = studio["id"]
 movie.save
 
 movie = Movie.new
 movie ["title"] = "The Dark Knight Rises"
 movie ["year_released"] = 2012
 movie ["rated"] = "PG-13"
-movie["studio_id"] = 1
+movie["studio_id"] = studio["id"]
 movie.save
 
 
@@ -284,9 +285,10 @@ for movie in all_movies
   studio = Studio.find_by({"id" => movie["studio_id"]})
 
   # read the studio title
-  # studio_title = studio["name"]
+   studio_title = studio["name"]
 
   puts "#{title} #{year_released} #{rating} "
+  
 end
 # questions for faculty (1) error in reading studio_title and when I try to run the active record the role id or the primary key keeps increasing
 # is that why?
