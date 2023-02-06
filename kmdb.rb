@@ -78,6 +78,7 @@
 # Do not use hard-coded foreign key IDs.
 # TODO!
 # Studio Model
+
 Studio.destroy_all
 studio = Studio.new
 studio["name"] = "Warner Bros."
@@ -175,94 +176,105 @@ darkknightrises = Movie.find_by({"title" => "The Dark Knight Rises"})
 
 # query to find actor title
 christian_bale = Actor.find_by({"name" => "Christian Bale"})
+michael_caine = Actor.find_by({"name" => "Michael Caine"})
+liam_neeson = Actor.find_by({"name" => "Liam Neeson"})
+katie_holmes = Actor.find_by({"name" => "Katie Holmes"})
+gary_oldman = Actor.find_by({"name" => "Gary Oldman"})
+heath_ledger = Actor.find_by({"name" => "Heath Ledger"})
+aaron_eckhart = Actor.find_by({"name" => "Aaron Eckhart"})
+maggie_gyllenhaal = Actor.find_by({"name" => "Maggie Gyllenhaal"})
+tom_hardy = Actor.find_by({"name" => "Tom Hardy"})
+gordon_levitt = Actor.find_by({"name" => "Joseph Gordon-Levitt"})
+anne_hathaway = Actor.find_by({"name" => "Anne Hathaway"})
 
+# insert new row to Role table
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
-role ["actor_id"] = 1
+role ["actor_id"] = christian_bale["id"]
 role ["character_name"] = "Bruce Wayne"
 role.save
 
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
-role ["actor_id"] = 2
+role ["actor_id"] = michael_caine["id"]
 role ["character_name"] = "Alfred"
 role.save
 
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
-role ["actor_id"] = 3
+role ["actor_id"] = liam_neeson["id"]
 role ["character_name"] = "Ra's Al Ghul"
 role.save
 
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
-role ["actor_id"] = 4
+role ["actor_id"] = katie_holmes["id"]
 role ["character_name"] = "Rachel Dawes"
 role.save
 
 role = Role.new
 role ["movie_id"] = batmanbegins["id"]
-role ["actor_id"] = 5
+role ["actor_id"] = gary_oldman["id"]
 role ["character_name"] = "Commissioner Gordon"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknight["id"]
-role ["actor_id"] = 1
+role ["actor_id"] = christian_bale["id"]
 role ["character_name"] = "Bruce Wayne"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknight["id"]
-role ["actor_id"] = 6
+role ["actor_id"] = heath_ledger["id"]
 role ["character_name"] = "Joker"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknight["id"]
-role ["actor_id"] = 7
+role ["actor_id"] = aaron_eckhart["id"]
 role ["character_name"] = "Harvey Dent"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknight["id"]
-role ["actor_id"] = 2
+role ["actor_id"] = michael_caine["id"]
 role ["character_name"] = "Alfred"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknight["id"]
-role ["actor_id"] = 8
+role ["actor_id"] = maggie_gyllenhaal["id"]
 role ["character_name"] = "Rachel Dawes"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknightrises["id"]
-role ["actor_id"] = 1
+role ["actor_id"] = christian_bale["id"]
 role ["character_name"] = "Bruce Wayne"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknightrises["id"]
-role ["actor_id"] = 5
+role ["actor_id"] = gary_oldman["id"]
 role ["character_name"] = "Commissioner Gordon"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknightrises["id"]
-role ["actor_id"] = 9
+role ["actor_id"] = tom_hardy["id"]
 role ["character_name"] = "Bane"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknightrises["id"]
-role ["actor_id"] = 10
+role ["actor_id"] = gordon_levitt["id"]
 role ["character_name"] = "John Blake"
 role.save
 
 role = Role.new
 role ["movie_id"] = darkknightrises["id"]
-role ["actor_id"] = 11
+role ["actor_id"] = anne_hathaway["id"]
 role ["character_name"] = "Selina Kyle"
 role.save
 
@@ -339,22 +351,3 @@ for cast in all_casts
  
   puts "#{movie_title} #{actor_name} #{char_name} "
 end
-
-# Top Cast
-# ========
-
-# Batman Begins          Christian Bale        Bruce Wayne
-# Batman Begins          Michael Caine         Alfred
-# Batman Begins          Liam Neeson           Ra's Al Ghul
-# Batman Begins          Katie Holmes          Rachel Dawes
-# Batman Begins          Gary Oldman           Commissioner Gordon
-# The Dark Knight        Christian Bale        Bruce Wayne
-# The Dark Knight        Heath Ledger          Joker
-# The Dark Knight        Aaron Eckhart         Harvey Dent
-# The Dark Knight        Michael Caine         Alfred
-# The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
-# The Dark Knight Rises  Christian Bale        Bruce Wayne
-# The Dark Knight Rises  Gary Oldman           Commissioner Gordon
-# The Dark Knight Rises  Tom Hardy             Bane
-# The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
-# The Dark Knight Rises  Anne Hathaway         Selina Kyle
